@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:meridian/core/base/base_usecase.dart';
 import 'package:meridian/core/model/movie_model.dart';
 import 'package:meridian/core/navigation/navigator.dart';
@@ -17,6 +18,7 @@ class HomeCubit extends Cubit<HomeState> {
         super(HomeState.init());
 
   init(BuildContext context) {
+    FlutterNativeSplash.remove();
     getMovieList(context: context);
   }
 
